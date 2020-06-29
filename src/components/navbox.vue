@@ -1,7 +1,12 @@
 <template>
     <div class="nav_box">
-        <img src="../assets/e-logo.png" class="logo" alt="">
-        <p id="title">E爱成宠</p>
+        <div class="title-box">
+            <img src="../assets/e-logo.png" class="logo" alt="">
+            <div class="font">
+                <p id="title">E爱成宠</p>
+                <p class="intro"> xxxxxxxx(简介)</p>
+            </div>
+        </div>
         <ul class="nav">
             <router-link  tag="li" active-class="activeClass" class="nav-item" :to="{path:'/index'}">首页</router-link>
             <router-link  tag="li" active-class="activeClass" class="nav-item" :to="{path:'/pet_business'}">宠物业务</router-link>
@@ -20,7 +25,7 @@
         name:'navbox',
         data() {
             return {
-                username:'兰翰麟'
+                username:'秦墨涵🐮🍺'
             };
         },
         methods: {
@@ -32,14 +37,29 @@
 </script>
 
 <style scoped>
+    .nav_box{
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        position: relative;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .title-box{
+        display: flex;
+        align-items: center;
+    }
+    .title-box > .font > .intro{
+        color: #99a9bf;
+    }
     .nav{
-        position: absolute;
         top: 0;
         left: 30%;
         list-style: none;
         height: 70px;
         width: 40%;
     }
+
     .nav li{
         float: left;
         height: 70px;
@@ -50,26 +70,20 @@
     }
 
     .nav-item{
-        color: black;
         text-decoration: none;
     }
 
     #title{
-        position: absolute;
-        left: 20%;
-        top: 5px;
         color: #00a2ff;
         font-weight: bold;
         font-size: 23px;
-        font-family: Tahoma;
+        font-family: Tahoma,serif;
     }
 
     .logo{
-        position: absolute;
-        left: 12%;
-        top: 5px;
         height: 65px;
         width: 65px;
+        margin-right: 10px;
     }
 
     .activeClass{
@@ -77,23 +91,26 @@
         color: white;
     }
 
-    #user_tx{
-        padding: 15px;
-        width: 40px;
-        height: 40px;
-        border-radius: 40px;
-    }
 
-    #username{
-        position: absolute;
-        left: 65px;
-        top: 20px;
-        font-size: 12px;
-    }
 
     .userinfo{
-        position: absolute;
-        left: 80%;
+
+        position: relative;
         width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+
+    .userinfo > img{
+        width: 50px;
+        height: 50px;
+        border-radius: 25px;
+        margin-right: 10px;
+    }
+
+
+
+
+
 </style>
